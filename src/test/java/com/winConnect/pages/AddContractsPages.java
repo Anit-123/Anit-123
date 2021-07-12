@@ -269,7 +269,7 @@ public class AddContractsPages extends PageObject {
 			Thread.sleep(5000);
 			elementToBeClickable(businessModel).click();
 			selectingValue_Check(businessMod);
-			System.err.println("code passed");
+			//System.err.println("code passed");
 			} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -456,7 +456,6 @@ public class AddContractsPages extends PageObject {
 		Thread.sleep(5000);
 		WebElement con = elementToBeClickable(By.xpath("//*[@id=\"contract.contractEntityEa\"]"));
 	    con.click();
-		//System.err.println("jklfsd fljwoeiru owieru oiwueroiwuer");
 		WebElement entit = driver.findElement(By.xpath("//input[@id='contract.contractEntityEa']"));
 		entit.sendKeys(Entity);
 		// property Type
@@ -498,41 +497,6 @@ public class AddContractsPages extends PageObject {
 		}
     }
 
-/*	public void UtilitesElec_op(String option) throws InterruptedException {
-
-		Electricity_op.click();
-		
-	}
-
-	public void Utilites_hot(String option) {
-
-		hotwaterop.click();
-	}
-
-	public void Utilites_gas() {
-
-		Metered_op.click();
-	}
-
-	public void Utilites_valueAds() {
-
-		valueadds_op.click();
-	}
-
-	public void Utilites_EV() {
-
-		EVcharging_op.click();
-	}
-
-	public void Utilites_Solar() {
-
-		solarPV_op.click();
-	}
-
-	public void Utilites_Internet() {
-
-		internet_op.click();
-	} */
 
 	public void UtilitesElec1(String  option ) throws InterruptedException {
 		switch (option) {
@@ -579,30 +543,32 @@ public class AddContractsPages extends PageObject {
 		WebElement XGme2 =elementToBeClickable(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div/div/div/div/div[4]/div[2]/div/div[2]/div/div[2]/div/div[3]/div/div/div/div/div"));
         XGme2.click();
 		selectingValue_Check(string3);
-		System.out.println("Metered Gas section is on ");
+		//System.out.println("Metered Gas section is on ");
 	}
 
 	public void setValue_EVcharging(String string, String string2, String string3) throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		System.out.println("EvCharging section is on 2of2");
+	//	System.out.println("EvCharging section is on 2of2");
 	//	WebElement scrollArea = driver.findElement(By.xpath("//*[@id=\"formControl_service.serviceJSON.evChargingBusinessModel\"]/div/div/div/div"));
 		System.out.println("EvCharging section is on 2of1");
 		Thread.sleep(5000);
 		// scroll_Page(scrollArea, 100);// js.executeScript("window.scrollTo(0,
 		// document.body.scrollHeight)"); //cHROME DRIVER SPEC.
-		System.out.println("EvCharging section is on 2");// scrollWithOffset(BusinessmodelEV, 200, 350);
+		//System.out.println("EvCharging section is on 2");// scrollWithOffset(BusinessmodelEV, 200, 350);
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.PAGE_DOWN);
-		elementToBeClickable(By.xpath("//*[@id=\"formControl_service.serviceJSON.evChargingBusinessModel\"]/div/div/div/div")).click();
+		WebElement ChargeBusi = elementToBeClickable(By.xpath("//*[@id=\"formControl_service.serviceJSON.evChargingBusinessModel\"]/div/div/div/div"));
+		ChargeBusi.click();
 		selectingValue_Check(string);
 		Thread.sleep(4000);
 		// For Firfox browser
-		elementToBeClickable(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div/div/div/div/div[4]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div")).click();
+		WebElement Charge =elementToBeClickable(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div/div/div/div/div[4]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div"));
+		Charge.click();
 		selectingValue_Check(string2);
 		Thread.sleep(4000);
-		elementToBeClickable(By.xpath("//*[@id=\"formControl_service.serviceJSON.evChargingOperationalModel\"]/div/div/div/div")).click();
-		// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"formControl_service.serviceJSON.evChargingOperationalModel\"]/div/div/div/div"))).click();
+		WebElement ChargeOperaModel = elementToBeClickable(By.xpath("//*[@id=\"formControl_service.serviceJSON.evChargingOperationalModel\"]/div/div/div/div"));
+		ChargeOperaModel.click();
 		selectingValue_Check(string3);
-		System.out.println("EvCharging section is on ");
+		//System.out.println("EvCharging section is on ");
 	}
 
 	public void setValue_SolarPVcharging(String Model, String maintenance, String ownership, String connection)throws InterruptedException {
@@ -612,41 +578,44 @@ public class AddContractsPages extends PageObject {
 		cor.inViewPort();
 		// Thread.sleep(1000);
 		// scroll_Page(scrollA1, 200);
-		System.out.println("SolarCharging section is on ");
-		elementToBeClickable(By.xpath("//*[@id=\"formControl_service.serviceJSON.solarPVBusinessModel\"]/div/div/div/div")).click();
+		//System.out.println("SolarCharging section is on ");
+		WebElement SolarPv =elementToBeClickable(By.xpath("//*[@id=\"formControl_service.serviceJSON.solarPVBusinessModel\"]/div/div/div/div"));
+		SolarPv.click();
 		selectingValue_Check(Model);
 		Thread.sleep(4000);
-		elementToBeClickable(By.xpath("//*[@id=\"formControl_service.serviceJSON.solarPVOngoingMaintenance\"]/div/div/div/div")).click();
+		WebElement SolarPvMain =elementToBeClickable(By.xpath("//*[@id=\"formControl_service.serviceJSON.solarPVOngoingMaintenance\"]/div/div/div/div"));
+		SolarPvMain.click();
 		selectingValue_Check(maintenance);
 		Thread.sleep(4000);
-		elementToBeClickable(By.xpath("//*[@id=\"formControl_service.serviceJSON.solarPVSystemOwnership\"]/div/div/div/div")).click();
+		WebElement SolarPvSystem= elementToBeClickable(By.xpath("//*[@id=\"formControl_service.serviceJSON.solarPVSystemOwnership\"]/div/div/div/div"));
+		SolarPvSystem.click();
 		selectingValue_Check(ownership);
 		WebElement scrollA2 = connection_var;
 		Coordinates cor1 = ((Locatable) scrollA2).getCoordinates();
 		cor1.inViewPort();
 		Thread.sleep(1000);
 		// scroll_Page(scrollA2, 200);
-		System.out.println("SolarCharging section is on 2nd scroll ");
-		elementToBeClickable(By.xpath("//*[@id=\"formControl_service.serviceJSON.solarPVConnectionPoint\"]/div/div/div/div")).click();
+		//System.out.println("SolarCharging section is on 2nd scroll ");
+		WebElement SolarPvConnection= elementToBeClickable(By.xpath("//*[@id=\"formControl_service.serviceJSON.solarPVConnectionPoint\"]/div/div/div/div"));
+		SolarPvConnection.click();
 		selectingValue_Check(connection);
 	}
 
 	private void setValue_Internetcharging(String service, String partner) throws InterruptedException {
-//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//		System.out.println("Internet section is on 2of2");
+
 //		WebElement scrollArea1 = driver.findElement(By.xpath("//*[@id=\"formControl_service.internetProductService\"]/div/div/div/div"));
 //		System.out.println("Internet section is on 2of1");
 //		scroll_Page(scrollArea1, 100);
-		System.out.println("Internet section is on ");
+		//System.out.println("Internet section is on ");
 		Thread.sleep(5000);
-		elementToBeClickable(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div/div/div/div/div[4]/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div/div/div/div ")).click();
-		System.out.println("Internet section is on 2");
+		WebElement InternetCha= elementToBeClickable(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div/div/div/div/div[4]/div[2]/div/div[2]/div/div[2]/div/div[1]/div/div/div/div/div "));
+		InternetCha.click();
+		//System.out.println("Internet section is on 2");
 		selectingValue_Check(service);
 		Thread.sleep(5000);
-		elementToBeClickable(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div/div/div/div/div[4]/div[2]/div/div[2]/div/div[2]/div/div[3]/div/div/div/div/div/div")).click();
+		WebElement Internetservice= elementToBeClickable(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div/div/div/div/div[4]/div[2]/div/div[2]/div/div[2]/div/div[3]/div/div/div/div/div/div"));
+		Internetservice.click();
 		selectingValue_Check(partner);
-		// WebElement scrollA3 =
-		// driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div/div/div/div[2]/div[2]/button"));
 		Thread.sleep(7000);
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.PAGE_UP);
 		Thread.sleep(4000);
@@ -658,7 +627,8 @@ public class AddContractsPages extends PageObject {
 		try {
 		Thread.sleep(7000);
 		tick_Chill_Heat.click();
-		elementToBeClickable(By.xpath("//*[@id=\"formControl_service.chilledAndHeatedWaterProductService\"]/div/div/div/div")).click();
+		WebElement chilledWater= elementToBeClickable(By.xpath("//*[@id=\"formControl_service.chilledAndHeatedWaterProductService\"]/div/div/div/div"));
+		chilledWater.click();
 			selectingValue_Check(service);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -666,7 +636,8 @@ public class AddContractsPages extends PageObject {
 		}
 		try {
 		Thread.sleep(7000);
-		elementToBeClickable(By.xpath("//*[@id=\"formControl_service.chilledHeatedWaterBrand\"]/div/div/div/div")).click();
+		WebElement heatedWater=elementToBeClickable(By.xpath("//*[@id=\"formControl_service.chilledHeatedWaterBrand\"]/div/div/div/div"));
+		heatedWater.click();
 			selectingValue_Check(brand);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -677,33 +648,37 @@ public class AddContractsPages extends PageObject {
 	private void setValue_FairAir(String service, String brand) throws InterruptedException {
 		Thread.sleep(7000);
 		tick_Air.click();
-		elementToBeClickable(By.xpath("//*[@id=\"formControl_service.fairAirProductService\"]/div/div/div/div")).click();
+		WebElement Fairair= elementToBeClickable(By.xpath("//*[@id=\"formControl_service.fairAirProductService\"]/div/div/div/div"));
+		Fairair.click();
 		selectingValue_Check(service);
 		Thread.sleep(7000);
-		System.out.println("is on ");
-		elementToBeClickable(By.xpath("//*[@id=\"formControl_service.fairAirBrand\"]/div/div/div/div")).click();
+		//System.out.println("is on ");
+		WebElement Fairairbrand =elementToBeClickable(By.xpath("//*[@id=\"formControl_service.fairAirBrand\"]/div/div/div/div"));
+		Fairairbrand.click();
 		selectingValue_Check(brand);
 
 	}
 
 	private void setValue_portableWater(String service, String brand) throws InterruptedException {
 		Thread.sleep(7000);
-		System.out.println("portableWater is on ");
+		//System.out.println("portableWater is on ");
 		tick_potable.click();
-  		elementToBeClickable(By.xpath("//*[@id=\"formControl_service.potableWaterProductService\"]/div/div/div/div")).click();
+		WebElement portableWater = elementToBeClickable(By.xpath("//*[@id=\"formControl_service.potableWaterProductService\"]/div/div/div/div"));
+		portableWater.click();
 		selectingValue_Check(service);
 		Thread.sleep(7000);
-		elementToBeClickable(By.xpath("//*[@id=\"formControl_service.potableWaterBrand\"]/div/div/div/div")).click();
+		WebElement portableWaterbrand =elementToBeClickable(By.xpath("//*[@id=\"formControl_service.potableWaterBrand\"]/div/div/div/div"));
+		portableWaterbrand.click();
 		selectingValue_Check(brand);
 	}
 
 	public void setValue_addsSelection() throws InterruptedException {
-		System.out.println("Value Adds ");
+		//System.out.println("Value Adds ");
 		tick_Air.click();
 		tick_potable.click();
 		tick_Chill_Heat.click();
 		if (tick_Air.isSelected() && tick_potable.isSelected() && tick_Chill_Heat.isSelected()) {
-			System.out.println("checkbox validation on");
+			//System.out.println("checkbox validation on");
 			SetvalueAddsDetails();
 		}
 		nextContract_Deatils.click();
@@ -730,7 +705,7 @@ public class AddContractsPages extends PageObject {
 		}		elementToBeClickable(By.xpath("/html/body/div[1]/div/div[1]/div[2]/div/div/div[2]/div[1]/ul/li/a/div")).click();
 		logout_sub.click();
 		elementisClickable(login_btn).click();
-		System.err.println(driver.getCurrentUrl());
+		//System.err.println(driver.getCurrentUrl());
 		elementToBeClickable(By.xpath("/html/body/div/div/header/div/ul/li[2]/a/div")).click();
 		
 		Assert.assertEquals(driver.getCurrentUrl(), "http://10.30.40.17:3550/pages/logout");
