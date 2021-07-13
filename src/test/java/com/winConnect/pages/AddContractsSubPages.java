@@ -245,7 +245,8 @@ public class AddContractsSubPages extends PageObject {
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.PAGE_UP);
 		nextbutton.click();	
 		nextbutton.click();	
-		}
+		
+	}
 	public void SetPriceFees_ChargersDetails() throws InterruptedException {
 
 		setValue_PriceeFesscharging("101", "2000","75");

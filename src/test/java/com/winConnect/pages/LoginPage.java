@@ -66,12 +66,11 @@ public class LoginPage extends PageObject {
 			
 	}
 	public void menupage_win() {
-		
-List<WebElement> rowwData =driver.findElements(By.cssSelector("div.MuiGrid-item-73:nth-child(n + 1) > div:nth-child(1) > div:nth-child(2)"));
+        List<WebElement> rowwData =driver.findElements(By.cssSelector("div.MuiGrid-item-73:nth-child(n + 1) > div:nth-child(1) > div:nth-child(2)"));
 		System.out.println("Displays count verified for CSScalculation  "  + rowwData.size());
 		for(int j = 1; j < rowwData.size(); j++) {
-			if(rowwData.get(j).getText().contains("Security"))  
-				System.out.println("the value is present :  " + rowwData.get(j).getText());
+		if(rowwData.get(j).getText().contains("Security"))  
+			System.out.println("the value is present :  " + rowwData.get(j).getText());
 	}}
 }
 /*
