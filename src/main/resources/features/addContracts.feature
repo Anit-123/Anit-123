@@ -92,3 +92,5 @@ Feature: Title of your feature
     Then It will shows the details of Internet to add the information
     And The details fields are blank and ready to fill information
     And logout from the page
+    
+    

@@ -206,7 +206,6 @@ public abstract class WebDriverHelper extends EventFiringWebDriver {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
         capabilities.setBrowserName("firefox");
-
         capabilities.setCapability("disable-restore-session-state", true);
         return capabilities;
 
@@ -218,8 +217,7 @@ public abstract class WebDriverHelper extends EventFiringWebDriver {
         DesiredCapabilities capabilities = DesiredCapabilities
                 .internetExplorer();
         capabilities.setCapability(CapabilityType.LOGGING_PREFS, logs);
-        capabilities
-                .setCapability(
+        capabilities.setCapability(
                         InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
                         true);
         capabilities.setVersion("9");

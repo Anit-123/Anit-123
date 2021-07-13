@@ -1,0 +1,12 @@
+ @july9
+  Scenario: Verify the functionalities of Implementations
+    Given I want to verify the functionalities of Implementations
+    And I am login to application
+    When I click on implementation to activate
+    Then It will land on implementation page.
+    
+    
+    When I place tick the "Solar PV"
+    Then It will shows the details of Solar PV to add the information
+    And The details fields are blank and ready to fill information
+    And logout from the page
